@@ -15,6 +15,8 @@ const root = new Vue({
         ]
     },
     methods: {
-
+        deleteTodos(index) {
+            this.todos.splice(index, 1)
+        }
     }
 })

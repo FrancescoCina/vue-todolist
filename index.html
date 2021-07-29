@@ -24,11 +24,11 @@
                 <div class="row my-4">
                     <div class="col">
                         <ul class="list-group w-50">
-                            <li v-for="todo in todos" class="list-group-item d-flex justify-content-between">{{ todo }}
-                                <button type="button" class="btn-close" aria-label="Close"></button>
+                            <li v-for="(todo, indexTodo) in todos"
+                                class="list-group-item d-flex justify-content-between">{{ todo }}
+                                <button @click="deleteTodos(indexTodo)" type="button" class="btn-close"
+                                    aria-label="Close"></button>
                             </li>
-
-
                         </ul>
                     </div>
                 </div>
