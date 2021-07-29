@@ -24,13 +24,13 @@
                 <div class="row my-4">
                     <div class="col-12 col-md-6">
                         <div class="input-group mb-3">
-                            <input type="text" v-model="newDuty" class="form-control"
-                                placeholder="Scrivi qui cosa inserire nella lista">
+                            <input type="text" v-model="newDuty" class="form-control" placeholder="Scrivi qui">
                             <button @click="addTodo" class="btn btn-outline-success" type="button"
                                 id="button-addon2">Aggiungi</button>
                         </div>
                     </div>
                     <div class="col-12 col-md-6">
+                        <h3 class="my-4" v-if="todos.length === 0">Complimenti non hai più niente da fare</h3>
                         <ul class="list-group">
                             <li v-for="(todo, indexTodo) in todos"
                                 class="list-group-item d-flex justify-content-between">{{
