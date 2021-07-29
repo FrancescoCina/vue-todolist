@@ -22,11 +22,9 @@ const root = new Vue({
         addTodo() {
             if (this.newDuty.trim() !== "") {
                 this.todos.push(this.newDuty);
-                this.newDuty = "";
-            } else {
-                this.newDuty = "";
-            }
-        }
+            } this.newDuty = "";
+        },
     }
 })
+
 
