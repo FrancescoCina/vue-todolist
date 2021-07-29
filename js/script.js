@@ -6,6 +6,7 @@ const root = new Vue({
     el: "#root",
     data: {
         linkLogo: "./img/logo.png",
+        newDuty: "",
         todos: [
             "Compra pane",
             "Cambia lampadina",
@@ -15,8 +16,11 @@ const root = new Vue({
         ]
     },
     methods: {
-        deleteTodos(index) {
+        deleteTodo(index) {
             this.todos.splice(index, 1)
+        },
+        addTodo() {
+            this.todos.push(this.newDuty)
         }
     }
 })
