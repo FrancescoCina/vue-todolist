@@ -20,7 +20,12 @@ const root = new Vue({
             this.todos.splice(index, 1)
         },
         addTodo() {
-            this.todos.push(this.newDuty)
+            if (this.newDuty.trim() !== "") {
+                this.todos.push(this.newDuty);
+                this.newDuty = "";
+            } else {
+                this.newDuty = "";
+            }
         }
     }
 })
