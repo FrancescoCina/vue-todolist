@@ -13,7 +13,8 @@ const root = new Vue({
             "Cibo per il cane",
             "Prendi soldi",
             "Compra latte",
-        ]
+        ],
+        isGoingToAdd: false,
     },
     methods: {
         deleteTodo(index) {
@@ -24,7 +25,12 @@ const root = new Vue({
                 this.todos.push(this.newDuty);
             } this.newDuty = "";
         },
-    }
+        wantAdd() {
+            this.isGoingToAdd = true;
+
+        }
+    },
+
 })
 
 
