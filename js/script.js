@@ -27,9 +27,13 @@ const root = new Vue({
         },
         wantAdd() {
             this.isGoingToAdd = true;
-
+        },
+        goBack() {
+            this.isGoingToAdd = false;
+            this.newDuty = "";
         }
     },
+
 
 })
 

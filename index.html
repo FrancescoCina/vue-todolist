@@ -6,6 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vue To Do List</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+        referrerpolicy="no-referrer" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="./css/style.css">
@@ -49,8 +51,10 @@
                                     <div class="input-group">
                                         <input type="text" v-model="newDuty" class="form-control"
                                             placeholder="Scrivi qui" @keyup.enter="addTodo">
+                                        <button @click="goBack" class="btn btn-outline-secondary" type="button"
+                                            id="button-addon2"><i class="fas fa-undo"></i></button>
                                         <button @click="addTodo" class="btn btn-outline-success" type="button"
-                                            id="button-addon2">Aggiungi</button>
+                                            id="button-addon2"><i class="fas fa-plus"></i></button>
                                     </div>
                                 </div>
                             </li>
