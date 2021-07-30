@@ -14,6 +14,7 @@ const root = new Vue({
             "Prendi soldi",
             "Compra latte",
         ],
+        searchTodo: "",
         isGoingToAdd: false,
     },
     methods: {
@@ -31,10 +32,19 @@ const root = new Vue({
         goBack() {
             this.isGoingToAdd = false;
             this.newDuty = "";
-        }
+        },
+        searchInList(task) {
+            if (!this.searchTodo.trim()) {
+                return true;
+            }
+            const inputValueChecked = this.searchTodo.trim().toLowerCase();
+            task = task.toLowerCase();
+            return task.includes(inputValueChecked);
+        },
     },
 
 
 })
+
 
 
