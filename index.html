@@ -36,7 +36,7 @@
                 <div class="row mb-5">
                     <div class="col-12 d-flex justify-content-center">
                         <div class="input-group w-50">
-                            <input v-model="searchTodo" class="form-control me-2" type="search"
+                            <input v-if="todos.length!==0" v-model="searchTodo" class="form-control me-2" type="search"
                                 placeholder="Cerca qui..">
                         </div>
                     </div>
