@@ -33,6 +33,7 @@
                         </div>
                     </div>
                 </div>
+                <!-- BARRA DI RICERCA -->
                 <div class="row mb-5">
                     <div class="col-12 d-flex justify-content-center">
                         <div class="input-group w-50">
@@ -41,19 +42,25 @@
                         </div>
                     </div>
                 </div>
+                <!-- INIZIO LISTA -->
                 <div class="row">
                     <div class="col-12 d-flex justify-content-center">
                         <h3 class="my-4 text-center" v-if="todos.length === 0">Complimenti non hai più niente da fare
                         </h3>
                         <ul class="list-group w-50" v-else>
-                            <li v-if="searchInList(todo)" v-for="(todo, indexTodo) in todos"
-                                class="list-group-item d-flex justify-content-between">{{
-                                todo }}
+                            <li v-if="searchInList(todo.text)" v-for="(todo, indexTodo) in todos"
+                                class="list-group-item d-flex justify-content-between">
+                                <div class="element-list clickable" @click="toggleDone(indexTodo)">
+                                    <i :class="isDone(indexTodo) ? 'far fa-check-square' : 'far fa-square me-2'"></i>
+                                    <span :class="isDone(indexTodo) ? 'text-decoration-line-through' : null"
+                                        class="text">{{ todo.text }}</span>
+                                </div>
                                 <button @click="deleteTodo(indexTodo)" type="button" class="btn-close"></button>
                             </li>
+                            <!-- BOTTONE GRANDE VERDE -->
                             <button v-if="isGoingToAdd === false" class="btn btn-success" type="button"
                                 @click="wantAdd">Aggiungi</button>
-
+                            <!-- BOTTONI AGGIUNGI O ESCI -->
                             <li v-if="isGoingToAdd" class="list-group-item">
                                 <div class="col-12 d-flex justify-content-center">
                                     <div class="input-group">

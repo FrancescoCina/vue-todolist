@@ -8,11 +8,11 @@ const root = new Vue({
         linkLogo: "./img/logo.png",
         newDuty: "",
         todos: [
-            "Compra pane",
-            "Cambia lampadina",
-            "Cibo per il cane",
-            "Prendi soldi",
-            "Compra latte",
+            { text: "Compra pane", done: false },
+            { text: "Cambia lampadina", done: false },
+            { text: "Cibo per il cane", done: false },
+            { text: "Prendi soldi", done: false },
+            { text: "Compra latte", done: false },
         ],
         searchTodo: "",
         isGoingToAdd: false,
@@ -23,7 +23,7 @@ const root = new Vue({
         },
         addTodo() {
             if (this.newDuty.trim() !== "") {
-                this.todos.push(this.newDuty);
+                this.todos.push({ text: this.newDuty, done: false });
             } this.newDuty = "";
         },
         wantAdd() {
@@ -41,9 +41,19 @@ const root = new Vue({
             task = task.toLowerCase();
             return task.includes(inputValueChecked);
         },
+        toggleDone(index) {
+            const updatedTasks = this.todos.map((task, updatedTasksIndex) => {
+                if (index === updatedTasksIndex) {
+                    task.done = !task.done;
+                }
+                return task;
+            })
+            return this.todos = updatedTasks;
+        },
+        isDone(index) {
+            return this.todos[index].done;
+        },
     },
-
-
 })
 
 
